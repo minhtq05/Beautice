@@ -57,7 +57,7 @@ function Carousel({ numCards }: { numCards: number }) {
 
     return (
         <div className="flex w-full justify-center items-center gap-2 mt-[135.9px] ml-[0.5px]">
-            {Array(numCards).fill(0).map((e, i) => <Dot active={i == carouselItem ? true : false} onClick={() => changeCarouselItem(i)} />)}
+            {Array(numCards).fill(0).map((_, i) => <Dot active={i == carouselItem ? true : false} onClick={() => changeCarouselItem(i)} />)}
         </div >
     )
 }
