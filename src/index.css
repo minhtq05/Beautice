@@ -5,32 +5,27 @@
 @layer base {
   @font-face {
       font-family: 'Poppins-Regular';
-      src: local('Poppins-Regular'),
-      url('./assets/fonts/Poppins/Poppins-Regular.ttf')
+      src: url('./assets/fonts/Poppins/Poppins-Regular.ttf')
   }
 
   @font-face {
       font-family: 'Poppins-Medium';
-      src: local('Poppins-Medium'),
-      url('./assets/fonts/Poppins/Poppins-Medium.ttf')
+      src: url('./assets/fonts/Poppins/Poppins-Medium.ttf')
   }
 
   @font-face {
       font-family: 'Poppins-SemiBold';
-      src: local('Poppins-SemiBold'),
-      url('./assets/fonts/Poppins/Poppins-SemiBold.ttf')
+      src: url('./assets/fonts/Poppins/Poppins-SemiBold.ttf')
   }
 
   @font-face {
       font-family: 'Poppins-Bold';
-      src: local('Poppins-Bold'),
-      url('./assets/fonts/Poppins/Poppins-Bold.ttf')
+      src: url('./assets/fonts/Poppins/Poppins-Bold.ttf')
   }
 
   @font-face {
       font-family: 'Poppins-MediumItalic';
-      src: local('Poppins-MediumItalic'),
-      url('./assets/fonts/Poppins/Poppins-MediumItalic.ttf')
+      src: url('./assets/fonts/Poppins/Poppins-MediumItalic.ttf')
   }
 }
 

@@ -38,7 +38,7 @@ function Intro() {
                 <div className="flex flex-col z-20 md:mt-[56px] md:items-start sm:items-center">
                     <h1 className="font-semibold text-5xl text-navy-blue leading-[125%] max-w-[430px] md:text-left sm:text-center">Clinic & beauty consultant</h1>
                     <p className="font-medium text-base text-navy-blue max-w-[474px] tracking-widest mt-[8.5px] md:text-left sm:text-center">It is a long established fact that a reader will be by the readable content of a page.</p>
-                    <Button className="w-[200px] h-[58.36px] mt-[33.5px] pl-[3px] pb-[2.5px] md:text-left sm:text-center" href="#" text="More Details" />
+                    <Button className="w-[200px] h-[58.36px] mt-[33.5px] pl-[3px] pb-[2.5px] md:text-left sm:text-center shadow-button" href="#" text="More Details" />
                 </div>
                 <div className="md:ml-[22px] sm:pt-[40px] md:pt-0">
                     <img src="intro-graphic.svg" alt="" />

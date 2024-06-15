@@ -40,7 +40,7 @@ function ContactUs() {
                         <Input className="col-span-2" type='text' placeholder="Email address" />
                         <Input className="col-span-2 pt-[1px]" type='text' placeholder="Subject message" />
                         <TextArea className="col-span-2 h-[239.47px]" placeholder="Your inquiry here" rows={9} />
-                        <button type="submit" className="flex-initial flex flex-wrap justify-center content-center bg-pink font-semibold text-white rounded-full tracking-widest pb-[2px] w-[248px] h-[58px] mt-[16.5px] ml-[1px]">Send Message</button>
+                        <button type="submit" className="flex-initial flex flex-wrap justify-center content-center bg-pink font-semibold text-white rounded-full tracking-widest pb-[2px] w-[248px] h-[58px] mt-[16.5px] ml-[1px] shadow-button">Send Message</button>
                     </form>
                 </div>
             </div >

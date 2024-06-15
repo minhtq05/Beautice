@@ -55,3 +55,7 @@
         top: 51px;
     }
 }
+
+ul > li {
+    list-style-image: url('/list-bullet.svg');
+}

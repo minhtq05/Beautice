@@ -50,6 +50,7 @@ export default {
       boxShadow: {
         'base': '0px 25px 50px 25px #F7F7FF',
         'sm': '-2px 6px 16px -1px #E6E9FD',
+        'button': '0px 17px 22px #FFEDF6',
       },
       dropShadow: {
         'logo': '0px 4px 4px rgba(0, 0, 0, 0.25)'

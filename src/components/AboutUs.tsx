@@ -38,7 +38,7 @@ function AboutUs() {
                     <br /><br />
                     Id dui erat sed quam tellus in purus. Pellentesque congue fringilla cras tellus enim.</p>
                 <div className="flex md:flex-row sm:flex-col gap-y-[20px] mt-[40.5px] items-center">
-                    <Button text="Learn More" href="#" className="w-[200px] h-[58.36px] pb-[2px] pl-[2.5px]" />
+                    <Button text="Learn More" href="#" className="w-[200px] h-[58.36px] pb-[2px] pl-[2.5px] shadow-button" />
                     <a href="#" className="flex flex-row justify-center items-center">
                         <a className="flex justify-center items-center w-[49px] h-[49px] rounded-full bg-navy-blue md:ml-[44px] sm:ml-[10px]" href="#">
                             <svg className="pl-[3px] pt-[1px] w-[20.8px]" width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
