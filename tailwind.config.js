@@ -6,7 +6,6 @@ export default {
   ],
   theme: {
     screens: {
-      // sm: '480px',
       'sm': '250px',
       'md': '768px',
       'lg': '976px',
@@ -51,6 +50,9 @@ export default {
         'base': '0px 25px 50px 25px #F7F7FF',
         'sm': '-2px 6px 16px -1px #E6E9FD',
       },
+      dropShadow: {
+        'logo': '0px 4px 4px rgba(0, 0, 0, 0.25)'
+      }
     }
   },
   plugins: [],

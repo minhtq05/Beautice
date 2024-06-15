@@ -6,7 +6,7 @@ import ContactUs from "./ContactUs";
 
 function Main() {
     return (
-        <div className="sm:overflow-x-hidden">
+        <div className="flex flex-col items-center">
             <Intro />
             <MainServices />
             <AboutUs />
