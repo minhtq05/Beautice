@@ -10,12 +10,12 @@ function AboutUs() {
                     <path d="M762.475 145.548C883.394 115.453 907.755 64.6053 948.022 15.2497V654.898C921.309 700.174 864.205 776.952 832.746 812.046C781.425 869.299 656.954 953.401 555.89 964.851C481.708 973.256 235.838 1013.42 122.141 827.05C-57.4153 532.73 232.251 312.704 306.898 276.242C527.581 168.449 676.808 166.87 762.475 145.548Z" fill="url(#paint1_linear_97_95)" />
                     <defs>
                         <linearGradient id="paint0_linear_97_95" x1="478.448" y1="0" x2="478.448" y2="1043.6" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#EAECFF" />
-                            <stop offset="1" stop-color="white" stop-opacity="0" />
+                            <stop stopColor="#EAECFF" />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient id="paint1_linear_97_95" x1="510.283" y1="15.2497" x2="510.283" y2="988.003" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#E4E7FF" />
-                            <stop offset="1" stop-color="white" stop-opacity="0" />
+                            <stop stopColor="#E4E7FF" />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </linearGradient>
                     </defs>
                 </svg>
@@ -25,8 +25,8 @@ function AboutUs() {
                     <path d="M698.475 130.548C819.394 100.453 843.755 49.6053 884.022 0.249695V639.898C857.309 685.174 800.205 761.952 768.746 797.046C717.425 854.299 592.954 938.401 491.89 949.851C417.708 958.256 171.838 998.417 58.1411 812.05C-121.415 517.73 168.251 297.704 242.898 261.242C463.581 153.449 612.808 151.87 698.475 130.548Z" fill="url(#paint0_linear_97_97)" />
                     <defs>
                         <linearGradient id="paint0_linear_97_97" x1="446.283" y1="0.249695" x2="446.283" y2="973.003" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#E4E7FF" />
-                            <stop offset="1" stop-color="white" stop-opacity="0" />
+                            <stop stopColor="#E4E7FF" />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </linearGradient>
                     </defs>
                 </svg>

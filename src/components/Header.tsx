@@ -1,10 +1,18 @@
-import { useEffect, useState } from "react"
+import {
+  Link,
+} from 'react-router-dom'
+import React, { useEffect, useState } from "react"
 import Button from "./Button"
-import tw from "twin.macro"
+// import tw from "twin.macro"
 
-const NavItem = tw.a`font-medium text-base min-w-20 tracking-widest mb-0.5`
+// const NavItem = tw.a`font-medium text-base min-w-20 tracking-widest mb-0.5`
+const NavItem = ({ children, className, href }: { children: React.ReactNode, className?: string, href: string }) => {
+  return (
+    <Link to={href} className={className + " font-medium text-base min-w-20 tracking-widest mb-0.5"}>{children}</Link>
+  )
+}
 
-function Header() {
+export default function Header() {
   const [width, setWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -24,18 +32,18 @@ function Header() {
         {
           width >= 976 ?
             <div className="flex flex-row justify-center items-center">
-              <NavItem className="w-[111px] font-semibold flex flex-row items-center text-purple" href="#">
+              <NavItem className="w-[111px] font-semibold flex flex-row items-center text-purple" href="/home">
                 Home
                 <svg className="ml-[5px] mt-0.5" width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="3.5" y1="2.18557e-08" x2="3.5" y2="7" stroke="#41487F" />
                   <line x1="7" y1="3.5" x2="-4.37114e-08" y2="3.5" stroke="#41487F" />
                 </svg>
               </NavItem>
-              <NavItem className="xl:w-[100px] lg:w-[80px] mt-[-2px] text-grey" href="#">About</NavItem>
-              <NavItem className="xl:w-[115px] lg:w-[95px] text-grey" href="#">Service</NavItem>
-              <NavItem className="xl:w-[114px] lg:w-[94px] text-grey" href="#">Gallery</NavItem>
-              <NavItem className="xl:w-[93px] lg:w-[73px] text-grey" href="#">Blog</NavItem>
-              <Button className="h-[52px] mb-1 xl:w-[158px] lg:w-[138px]" href="#" text="Contact" />
+              <NavItem className="xl:w-[100px] lg:w-[80px] mt-[-2px] text-grey" href="/about">About</NavItem>
+              <NavItem className="xl:w-[115px] lg:w-[95px] text-grey" href="/service">Service</NavItem>
+              <NavItem className="xl:w-[114px] lg:w-[94px] text-grey" href="/gallery">Gallery</NavItem>
+              <NavItem className="xl:w-[93px] lg:w-[73px] text-grey" href="/blog">Blog</NavItem>
+              <Button className="h-[52px] mb-1 xl:w-[158px] lg:w-[138px]" href="/contact-us" text="Contact" />
             </div> : null
         }
       </div>
@@ -59,5 +67,3 @@ function Header() {
     </div>
   )
 }
-
-export default Header

@@ -45,20 +45,20 @@ function Footer() {
                         <div className="flex flex-col items-start justity-between w-[131px]">
                             <p className="text-lg text-white font-semibold tracking-widest pb-[10px]">Pages</p>
                             <ul className="list-inside mt-[19px] space-y-[11px]">
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">Home</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">About</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">Services</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">Gallery</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">Team</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Home</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">About</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Services</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Gallery</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Team</span></li>
                             </ul>
                         </div>
                         <div className="flex flex-col items-start justity-between w-[215px]">
                             <p className="text-lg text-white font-semibold tracking-widest pb-[10px]">Informations</p>
                             <ul className="list-inside mt-[19px] space-y-[11px]">
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">Terms & conditions</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">Privacy policy</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">Blog</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[5px] top-[-1.3px]">Contact</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Terms & conditions</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Privacy policy</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Blog</span></li>
+                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Contact</span></li>
                             </ul>
                         </div>
                     </div>
