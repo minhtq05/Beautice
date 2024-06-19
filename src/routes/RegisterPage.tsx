@@ -26,7 +26,8 @@ export default function RegisterPage() {
     )
 }
 
-export async function action({ request, params }) {
+// eslint-disable-next-line react-refresh/only-export-components
+export async function action({ request }: { request: Request }) {
     const formData = await request.formData()
     const user = Object.fromEntries(formData)
     const username = user.username || null

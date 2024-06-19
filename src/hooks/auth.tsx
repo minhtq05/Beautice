@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useLayoutEffect } from "react";
+import React, { createContext, useContext, useState, useLayoutEffect } from "react";
 import axios from "axios";
 
 type AuthContextType = {
@@ -6,13 +6,14 @@ type AuthContextType = {
         isAuthenticated: boolean;
         username: string;
     };
-    signin: () => void
+    signin: (token: string) => void
     signout: () => void
 }
 
-const AuthContext = createContext<AuthContextType>()
+const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
-export function useAuth() {
+// eslint-disable-next-line react-refresh/only-export-components
+export function useAuth(): AuthContextType {
     const context = useContext(AuthContext)
 
     if (!context) {
@@ -22,15 +23,12 @@ export function useAuth() {
     return context
 }
 
-export default function AuthProvider({ children }) {
+export default function AuthProvider({ children }: { children: React.ReactNode }) {
     console.log("Render Auth")
     const [user, setUser] = useState({
         isAuthenticated: false,
         username: '',
     })
-    const [token, setToken] = useState<string | null>(null)
-    const [loading, setLoading] = useState(true)
-
 
     const handleSignin = (token: string) => {
         console.log("New user signed in with token:", token)
@@ -38,7 +36,6 @@ export default function AuthProvider({ children }) {
             isAuthenticated: true,
             username: ''
         })
-        setToken(token)
     }
 
     const handleSignout = () => {
@@ -47,7 +44,6 @@ export default function AuthProvider({ children }) {
             isAuthenticated: false,
             username: ''
         })
-        setToken(null)
     }
 
     useLayoutEffect(() => {
@@ -62,15 +58,13 @@ export default function AuthProvider({ children }) {
                     isAuthenticated: true,
                     username: ''
                 })
-                setToken(old_token)
-                setLoading(false)
             }).catch(() => {
             })
         }
         fetchAuth()
     }, [])
 
-    const value = {
+    const value: AuthContextType = {
         user,
         signin(token: string) {
             handleSignin(token)
@@ -84,7 +78,6 @@ export default function AuthProvider({ children }) {
 
     return (
         <AuthContext.Provider value={value}>
-            {console.log("auth:", value.user.isAuthenticated)}
             {children}
         </AuthContext.Provider>
     )

@@ -2,17 +2,30 @@ import {
     Form,
     Navigate,
     useActionData,
+    useLocation,
+    useNavigate,
 } from 'react-router-dom'
 import axios from 'axios'
 import { useAuth } from '../hooks/auth'
 
+type signinData = {
+    token: string;
+} | null
+
 export default function SignInPage() {
     console.log("Render SignIn")
-    const signedInUser = useActionData()
+    const signedInUser = useActionData() as signinData
+    const navigate = useNavigate()
     const auth = useAuth()
+    const location = useLocation()
 
     if (auth.user.isAuthenticated) {
-        return <Navigate to="/" />
+        const params = location.state
+        if (params.redirect) {
+            return navigate(-1)
+        } else {
+            return <Navigate to="/" />
+        }
     }
 
     if (signedInUser) {
@@ -40,7 +53,8 @@ export default function SignInPage() {
     )
 }
 
-export async function action({ request, params }) {
+// eslint-disable-next-line react-refresh/only-export-components
+export async function action({ request }: { request: Request }) {
     const formData = await request.formData()
     const username = formData.get('username')
     const password = formData.get('password')
@@ -53,4 +67,8 @@ export async function action({ request, params }) {
         return null
     })
     return res
+}
+
+export async function loader({ request, params }: { request: Request, params?: boolean }) {
+
 }

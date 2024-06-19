@@ -63,7 +63,7 @@ app.post('/signin', async (req, res) => {
             })
     }
 
-    const jwtToken = jwt.sign({ username: user.username }, JWT_SECRET)
+    const jwtToken = jwt.sign({ username: user.username }, JWT_SECRET, { expiresIn: 15 * 60 })
     res.status(200).json({ token: jwtToken })
     console.log("Login successfully!")
 })

@@ -2,7 +2,6 @@ import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 import GotoTop from '../components/GotoTop'
-import { useAuth } from '../hooks/auth'
 
 export default function App() {
   return (
