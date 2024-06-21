@@ -11,7 +11,9 @@ export default {
       'md': '768px',
       'lg': '976px',
       'xl': '1024px',
+      'xxl': '1280px',
       '2xl': '1440px',
+      '3xl': '1600px',
     },
     // colors: {
     //   'blue': '#1fb6ff',
@@ -54,7 +56,10 @@ export default {
       },
       dropShadow: {
         'logo': '0px 4px 4px rgba(0, 0, 0, 0.25)'
-      }
+      },
+      backgroundImage: {
+        'gradient-24': 'linear-gradient(24deg, var(--tw-gradient-stops))'
+      },
     }
   },
   plugins: [],

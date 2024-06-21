@@ -1,18 +1,22 @@
+import { Link } from 'react-router-dom'
+import tw from 'twin.macro'
 import './styles.css'
+
+const Span = tw.span`text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative ml-[3px] top-[-1.3px]`
 
 function Footer() {
     return (
         <div className="relative flex justify-center items-center w-full xl:h-[705.34px] sm:h-[1100px] overflow-hidden mt-[69.66px]">
             <div>
-                <div className="absolute w-[1460px] h-[636.7px] rounded-[150px] bg-[#DFE2FF] rotate-[3.41deg] footer-1"></div>
-                <div className="absolute w-[1440px] h-[225px] bg-[#0D165C] mt-[460px] footer-2"></div>
-                <div className="absolute w-[1470px] xl:h-[647.14px] sm:h-[1200px] rounded-[150px] bg-[#172176] rotate-[4.99deg]  footer-3"></div>
+                <div className="absolute sm:w-[1460px] 3xl:w-[calc(100vw+50px)] h-[636.7px] rounded-[150px] bg-[#DFE2FF] sm:rotate-[3.41deg] 3xl:rotate-[1deg] footer-1"></div>
+                <div className="absolute sm:w-[1440px] 3xl:w-full h-[225px] bg-[#0D165C] mt-[460px] footer-2"></div>
+                <div className="absolute sm:w-[1470px] 3xl:w-[calc(100vw+50px)] xl:h-[647.14px] sm:h-[1200px] rounded-[150px] bg-[#172176] sm:rotate-[4.99deg] 3xl:rotate-[2deg] footer-3"></div>
             </div>
-            <div className="flex xl:flex-row sm:flex-col z-30 justify-center items-start pt-[131px] xl:w-full sm:w-10/12 px-[20px]">
+            <div className="flex xl:flex-row sm:flex-col z-30 justify-center items-start pt-[131px] xl:w-full sm:w-10/12 xl:px-[150px]">
                 <div className="flex flex-col xl:w-[621px] sm:w-full mt-[19px] ">
                     <div className="flex flex-row h-[63px] xl:w-[492px] sm:w-10/12">
                         <img src="/logo-dark.svg" alt="" />
-                        <a className="flex-initial flex flex-wrap ml-[18px] content-center font-bold text-2xl tracking-widest text-white min-w-[161px] mt-[1px]">Beautice</a>
+                        <Link className="flex-initial flex flex-wrap ml-[18px] content-center font-bold text-2xl tracking-widest text-white min-w-[161px] mt-[1px]" to="#">Beautice</Link>
                     </div>
                     <div className="flex flex-col xl:w-[492px] sm:w-full pl-[31px] pt-[35px]">
                         <p className="text-base text-[#D7DBFF] leading-[21px] font-regular tracking-widest text-wrap"><strong className="font-bold">Beautice</strong> is a Beauty Clinic WordPress Theme.</p>
@@ -41,24 +45,24 @@ function Footer() {
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <div className="flex md:flex-row sm:flex-col xl:gap-x-[173px] gap-y-[10px] items-start mt-[3px]">
+                    <div className="flex md:flex-row sm:flex-col gap-x-[173px] gap-y-[30px] items-start mt-[3px]">
                         <div className="flex flex-col items-start justity-between w-[131px]">
                             <p className="text-lg text-white font-semibold tracking-widest pb-[10px]">Pages</p>
                             <ul className="list-inside mt-[19px] space-y-[11px]">
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Home</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">About</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Services</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Gallery</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Team</span></li>
+                                <li><Span>Home</Span></li>
+                                <li><Span>About</Span></li>
+                                <li><Span>Services</Span></li>
+                                <li><Span>Gallery</Span></li>
+                                <li><Span>Team</Span></li>
                             </ul>
                         </div>
                         <div className="flex flex-col items-start justity-between w-[215px]">
                             <p className="text-lg text-white font-semibold tracking-widest pb-[10px]">Informations</p>
                             <ul className="list-inside mt-[19px] space-y-[11px]">
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Terms & conditions</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Privacy policy</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Blog</span></li>
-                                <li><span className="text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative left-[3px] top-[-1.3px]">Contact</span></li>
+                                <li><Span>Terms & conditions</Span></li>
+                                <li><Span>Privacy policy</Span></li>
+                                <li><Span>Blog</Span></li>
+                                <li><Span>Contact</Span></li>
                             </ul>
                         </div>
                     </div>

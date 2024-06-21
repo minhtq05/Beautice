@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Button from "./Button"
 import './styles.css'
 
@@ -39,14 +40,14 @@ function AboutUs() {
                     Id dui erat sed quam tellus in purus. Pellentesque congue fringilla cras tellus enim.</p>
                 <div className="flex md:flex-row sm:flex-col gap-y-[20px] mt-[40.5px] items-center">
                     <Button text="Learn More" href="#" className="w-[200px] h-[58.36px] pb-[2px] pl-[2.5px] shadow-button" />
-                    <a href="#" className="flex flex-row justify-center items-center">
-                        <a className="flex justify-center items-center w-[49px] h-[49px] rounded-full bg-navy-blue md:ml-[44px] sm:ml-[10px]" href="#">
+                    <Link to="#" className="flex flex-row justify-center items-center">
+                        <div className="flex justify-center items-center w-[49px] h-[49px] rounded-full bg-navy-blue md:ml-[44px] sm:ml-[10px]">
                             <svg className="pl-[3px] pt-[1px] w-[20.8px]" width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13.1167 6.61447C14.45 7.38427 14.45 9.30877 13.1167 10.0786L3.80417 15.4551C2.47083 16.2249 0.804168 15.2627 0.804168 13.7231L0.804168 2.96994C0.804169 1.43034 2.47084 0.468091 3.80417 1.23789L13.1167 6.61447Z" fill="white" />
                             </svg>
-                        </a>
+                        </div>
                         <p className="text-base text-grey font-semibold w-[151px] ml-[13px] tracking-widest mt-[-1px]">Watch Video</p>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <img className="lg:w-[476px] sm:w-[85vw] mt-[46px] rounded-[50px] z-10" src="/about-us-image.png" alt="Beautice" />

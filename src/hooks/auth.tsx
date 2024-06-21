@@ -1,16 +1,27 @@
-import React, { createContext, useContext, useState, useLayoutEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
+import Loading from "../components/Authentication";
+import { CookiesProvider, useCookies } from "react-cookie";
+
+type Auth = {
+    isAuthenticated: boolean
+    username: string
+}
 
 type AuthContextType = {
     user: {
-        isAuthenticated: boolean;
-        username: string;
-    };
+        isAuthenticated: boolean
+        username: string
+    }
     signin: (token: string) => void
     signout: () => void
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined)
+// type ProtectedAuthResponse = {
+//     username: string
+// }
+
+const AuthContext = createContext<AuthContextType | null>(null)
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function useAuth(): AuthContextType {
@@ -24,61 +35,80 @@ export function useAuth(): AuthContextType {
 }
 
 export default function AuthProvider({ children }: { children: React.ReactNode }) {
-    console.log("Render Auth")
-    const [user, setUser] = useState({
+    console.log("Render Auth Provider")
+    const [user, setUser] = useState<Auth>({
         isAuthenticated: false,
         username: '',
     })
+    const [inAuth, setInAuth] = useState<boolean>(true)
+    const [token, setToken] = useState<string>('')
+    const [cookies, setCookie, removeCookie] = useCookies()
 
     const handleSignin = (token: string) => {
-        console.log("New user signed in with token:", token)
         setUser({
             isAuthenticated: true,
-            username: ''
+            username: '',
         })
+        setToken(token)
     }
 
     const handleSignout = () => {
-        console.log("User signed out.")
         setUser({
             isAuthenticated: false,
             username: ''
         })
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const fetchAuth = async () => {
-            const old_token = localStorage.getItem('token')
-            axios.get('http://localhost:3000/protected', {
-                headers: {
-                    authorization: old_token
+            if (token === '') {
+                setInAuth(false)
+                const old_token: string | null = cookies.token
+
+                if (old_token) {
+                    setToken(old_token)
+                    axios.get('http://localhost:3000/protected', {
+                        headers: {
+                            authorization: old_token
+                        }
+                    }).then(() => {
+                        if (!user.isAuthenticated) {
+                            handleSignin(old_token)
+                            setCookie('token', old_token)
+                        }
+                    }).catch((err) => {
+                        if (user.isAuthenticated) {
+                            handleSignout()
+                            removeCookie('token')
+                            setToken('')
+                        }
+                        console.log(err)
+                    })
                 }
-            }).then(() => {
-                setUser({
-                    isAuthenticated: true,
-                    username: ''
-                })
-            }).catch(() => {
-            })
+            }
         }
         fetchAuth()
+        console.log("Auth Provider mounted")
     }, [])
+
 
     const value: AuthContextType = {
         user,
         signin(token: string) {
             handleSignin(token)
-            localStorage.setItem("token", token)
+            setCookie('token', token)
         },
         signout() {
             handleSignout()
-            localStorage.removeItem('token')
+            removeCookie('token')
         },
     }
 
-    return (
-        <AuthContext.Provider value={value}>
-            {children}
-        </AuthContext.Provider>
+    return inAuth ? (<Loading />) : (
+        <CookiesProvider defaultSetOptions={{ path: "/" }}>
+            <AuthContext.Provider value={value}>
+                {children}
+            </AuthContext.Provider>
+        </CookiesProvider>
     )
 }

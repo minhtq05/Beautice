@@ -1,17 +1,19 @@
+import { useEffect } from 'react';
 import { useAuth } from '../hooks/auth'
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 export default function ProtectedRoute() {
     console.log("Render ProtectedRoute")
     const auth = useAuth()
     const navigate = useNavigate()
+    const location = useLocation()
 
-    console.log(auth.user)
-
-    if (!auth.user.isAuthenticated) {
-        // return <Navigate to="/signin/?redirect=true" />
-        return navigate("/signin", { state: { redirect: true } })
-    }
+    useEffect(() => {
+        if (!auth.user.isAuthenticated) {
+            navigate("/signin", { state: { from: location.pathname } })
+        }
+        console.log("ProtectedRoute mounted")
+    }, [auth, navigate, location])
 
     return (
         <Outlet />
