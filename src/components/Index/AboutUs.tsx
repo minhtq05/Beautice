@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Button from "./Button"
+import Button from "@/components/Button"
 import './styles.css'
 
 function AboutUs() {
@@ -21,17 +21,6 @@ function AboutUs() {
                     </defs>
                 </svg>
             </div>
-            {/* <div className="absolute z-0 about-us mt-[-339.19px]">
-                <svg width="883" height="960" viewBox="0 0 883 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M698.475 130.548C819.394 100.453 843.755 49.6053 884.022 0.249695V639.898C857.309 685.174 800.205 761.952 768.746 797.046C717.425 854.299 592.954 938.401 491.89 949.851C417.708 958.256 171.838 998.417 58.1411 812.05C-121.415 517.73 168.251 297.704 242.898 261.242C463.581 153.449 612.808 151.87 698.475 130.548Z" fill="url(#paint0_linear_97_97)" />
-                    <defs>
-                        <linearGradient id="paint0_linear_97_97" x1="446.283" y1="0.249695" x2="446.283" y2="973.003" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#E4E7FF" />
-                            <stop offset="1" stopColor="white" stopOpacity="0" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div> */}
             <div className="relative flex flex-col sm:items-center md:items-start md:w-[664px] sm:w-full gap-y-[12px] z-10">
                 <p className="text-base text-pink font-semibold ml-[1px] md:text-left sm:text-center">About Us</p>
                 <h2 className="text-4xl text-navy-blue font-semibold md:text-left sm:text-center">We are the best beauty clinic</h2>
@@ -40,7 +29,7 @@ function AboutUs() {
                     Id dui erat sed quam tellus in purus. Pellentesque congue fringilla cras tellus enim.</p>
                 <div className="flex md:flex-row sm:flex-col gap-y-[20px] mt-[40.5px] items-center">
                     <Button text="Learn More" href="#" className="w-[200px] h-[58.36px] pb-[2px] pl-[2.5px] shadow-button" />
-                    <Link to="#" className="flex flex-row justify-center items-center">
+                    <Link to="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="flex flex-row justify-center items-center">
                         <div className="flex justify-center items-center w-[49px] h-[49px] rounded-full bg-navy-blue md:ml-[44px] sm:ml-[10px]">
                             <svg className="pl-[3px] pt-[1px] w-[20.8px]" width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13.1167 6.61447C14.45 7.38427 14.45 9.30877 13.1167 10.0786L3.80417 15.4551C2.47083 16.2249 0.804168 15.2627 0.804168 13.7231L0.804168 2.96994C0.804169 1.43034 2.47084 0.468091 3.80417 1.23789L13.1167 6.61447Z" fill="white" />
@@ -50,7 +39,7 @@ function AboutUs() {
                     </Link>
                 </div>
             </div>
-            <img className="lg:w-[476px] sm:w-[85vw] mt-[46px] rounded-[50px] z-10" src="/about-us-image.png" alt="Beautice" />
+            <img className="lg:w-[476px] sm:w-[85vw] mt-[46px] rounded-[50px] z-10" src="./Index/about-us-image.png" alt="Beautice" />
         </div>
     )
 }

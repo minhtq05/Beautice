@@ -1,0 +1,27 @@
+.intro {
+    left: 0px;
+    top: 0px;
+}
+
+.intro > :where(svg, path) {
+    width: max(calc((1267 / 1440) * 100vw), 400px);
+    height: auto;
+}
+
+.about-us {
+    right: 0px;
+}
+
+.about-us :where(svg, path) {
+    width: max(calc((947 / 1440) * 100vw), 400px);
+    height: auto;
+}
+
+.contact-us {
+    left: 0px;
+}
+
+.contact-us :where(svg, path) {
+    width: max(calc((1176 / 1440) * 100vw), 400px);
+    height: auto;
+}

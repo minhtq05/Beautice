@@ -6,9 +6,9 @@ function MainServices() {
             <p className="text-base text-grey font-regular text-center max-w-[840px] tracking-widest mt-[19px] z-10">Porta rhoncus orci condimentum vitae lobortis eu dignissim non massa. Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.</p>
             <div className="relative flex justify-center items-center w-full pb-[133px] z-10">
                 <div className="grid justify-items-center lg:grid-cols-3 lg:gap-x-[56px] gap-y-[20px] mt-[84.5px] ml-[1px]">
-                    <ServiceItem className="" img="/beauty-consultant-service.svg" title="Beauty consultation" content="Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis." />
-                    <ServiceItem img="/skin-treatment-service.svg" title="Skin treatments" content="Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis." />
-                    <ServiceItem className="ml-[-2px]" img="/beauty-product-service.svg" title="Beauty product" content="Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis." />
+                    <ServiceItem className="" img="./Index/beauty-consultant-service.svg" title="Beauty consultation" content="Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis." />
+                    <ServiceItem img="./Index/skin-treatment-service.svg" title="Skin treatments" content="Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis." />
+                    <ServiceItem className="ml-[-2px]" img="./Index/beauty-product-service.svg" title="Beauty product" content="Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis." />
                 </div>
             </div>
         </div>

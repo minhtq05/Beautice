@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Button from "./Button"
+import Button from "@/components/Button"
 import './styles.css'
 
 function Intro() {
@@ -41,7 +41,7 @@ function Intro() {
                     <Button className="w-[200px] h-[58.36px] mt-[33.5px] pl-[3px] pb-[2.5px] md:text-left sm:text-center shadow-button" href="#" text="More Details" />
                 </div>
                 <div className="md:ml-[22px] sm:pt-[40px] md:pt-0">
-                    <img src="intro-graphic.svg" alt="" />
+                    <img src="./Index/intro-graphic.svg" alt="" />
                 </div>
             </div>
             <Carousel numCards={3} />
@@ -58,14 +58,14 @@ function Carousel({ numCards }: { numCards: number }) {
 
     return (
         <div className="flex w-full justify-center items-center gap-2 mt-[135.9px] ml-[0.5px] z-10">
-            {Array(numCards).fill(0).map((_, i) => <Dot key={i} active={i == carouselItem ? true : false} onClick={() => changeCarouselItem(i)} />)}
+            {Array(numCards).fill(0).map((_, i) => <Dot active={i == carouselItem ? true : false} onClick={() => changeCarouselItem(i)} key={i} />)}
         </div >
     )
 }
 
-function Dot({ active, onClick, key }: { active: boolean, onClick: () => void, key: number }) {
+function Dot({ active, onClick }: { active: boolean, onClick: () => void, key: number }) {
     return (
-        <button onClick={onClick} className={`rounded-full z-10 ${active ? "w-[25.31px] h-[8.15px] bg-navy-blue" : "w-[14.82px] h-[3.09px] bg-light-grey mt-[-1px]"}`} key={key}></button>
+        <button onClick={onClick} className={`rounded-full z-10 ${active ? "w-[25.31px] h-[8.15px] bg-navy-blue" : "w-[14.82px] h-[3.09px] bg-light-grey mt-[-1px]"}`}></button>
     )
 }
 

@@ -1,6 +1,7 @@
 import React from "react"
 import * as _ from 'lodash'
 import tw from "twin.macro"
+import { Link } from "react-router-dom"
 
 export default function Loading(): JSX.Element {
     return (
@@ -11,9 +12,15 @@ export default function Loading(): JSX.Element {
 }
 
 export const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
-    const colors = _.sampleSize(['#D9DDFE', '#FF64AE', '#DFE2FF'], 2)
+    const bg = _.sample([
+        'from-[#091156] to-[#FF64AE]',
+        'from-[#FF64AE] to-[#D9DDFE]',
+        'from-[#D9DDFE] to-[#F0F0F0]',
+    ])
     return (
-        <div className={`relative w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gradient-24 from-[${colors[0]}] to-[${colors[1]}]`} >
+        // <div className={"relative w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gradient-to-tr from-[" + colors[0] + "] to-[" + colors[1] + "]"
+        <div className={"relative w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gradient-24 " + bg
+        } >
             {children}
         </div >
     )
@@ -23,6 +30,7 @@ export const Panel = ({ children }: { children: React.ReactNode }): JSX.Element 
     return (
         <div className="relative flex flex-col justify-center items-center bg-[white] rounded-[20px] w-full sm:max-w-[500px] h-fit p-[40px] shadow-base">
             {children}
+            {/* <Link to="/" className="text-sm text-navy-blue font-regular mt-[10px]">Back to home</Link> */}
         </div>
     )
 }

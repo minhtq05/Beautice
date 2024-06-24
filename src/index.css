@@ -29,6 +29,16 @@
   }
 }
 
+@layer components {
+  .debug-red {
+    border: 2px solid red;
+  }
+
+  .debug-blue {
+    border: 2px solid blue;
+  }
+}
+
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

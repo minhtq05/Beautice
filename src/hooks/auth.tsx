@@ -79,9 +79,9 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
                     }).catch((err) => {
                         if (user.isAuthenticated) {
                             handleSignout()
-                            removeCookie('token')
-                            setToken('')
                         }
+                        setToken('')
+                        removeCookie('token')
                         console.log(err)
                     })
                 }

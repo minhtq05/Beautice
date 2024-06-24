@@ -4,7 +4,7 @@ import AboutUs from "./AboutUs";
 import ProfessionalTeams from "./ProfessionalTeams";
 import ContactUs from "./ContactUs";
 
-function Main() {
+function Index() {
     return (
         <div className="flex flex-col items-center">
             <Intro />
@@ -16,4 +16,4 @@ function Main() {
     )
 }
 
-export default Main
+export default Index

@@ -2,20 +2,20 @@ import { Link } from 'react-router-dom'
 import tw from 'twin.macro'
 import './styles.css'
 
-const Span = tw.span`text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative ml-[3px] top-[-1.3px]`
+const Span = tw.span`text-base text-[#D7DBFF] font-regular tracking-widest leading-[24px] relative ml-[4px] top-[-1.3px]`
 
 function Footer() {
     return (
-        <div className="relative flex justify-center items-center w-full xl:h-[705.34px] sm:h-[1100px] overflow-hidden mt-[69.66px]">
+        <div className="relative flex justify-center items-center w-full xl:h-[775px] sm:h-[1169.66px] overflow-hidden 3xl:bg-white z-10">
             <div>
-                <div className="absolute sm:w-[1460px] 3xl:w-[calc(100vw+50px)] h-[636.7px] rounded-[150px] bg-[#DFE2FF] sm:rotate-[3.41deg] 3xl:rotate-[1deg] footer-1"></div>
-                <div className="absolute sm:w-[1440px] 3xl:w-full h-[225px] bg-[#0D165C] mt-[460px] footer-2"></div>
-                <div className="absolute sm:w-[1470px] 3xl:w-[calc(100vw+50px)] xl:h-[647.14px] sm:h-[1200px] rounded-[150px] bg-[#172176] sm:rotate-[4.99deg] 3xl:rotate-[2deg] footer-3"></div>
+                <div className="absolute sm:w-[1460px] 3xl:w-[calc(100vw+50px)] h-[636.7px] rounded-[150px] bg-[#DFE2FF] sm:rotate-[3.41deg] 3xl:rotate-[1deg] footer-1 mt-[69.66px]"></div>
+                <div className="absolute sm:w-[1440px] 3xl:w-full h-[225px] bg-[#0D165C] footer-2 mt-[460px]"></div>
+                <div className="absolute sm:w-[1470px] 3xl:w-[calc(100vw+50px)] xl:h-[647.14px] sm:h-[1200px] rounded-[150px] bg-[#172176] sm:rotate-[4.99deg] 3xl:rotate-[2deg] footer-3 mt-[69.66px]"></div>
             </div>
-            <div className="flex xl:flex-row sm:flex-col z-30 justify-center items-start pt-[131px] xl:w-full sm:w-10/12 xl:px-[150px]">
-                <div className="flex flex-col xl:w-[621px] sm:w-full mt-[19px] ">
+            <div className="flex xl:flex-row sm:flex-col z-30 justify-center items-start pt-[131px] xl:w-full sm:w-10/12 xl:px-[150px] mt-[69.66px]">
+                <div className="flex flex-col xl:w-[621px] sm:w-full mt-[19px]">
                     <div className="flex flex-row h-[63px] xl:w-[492px] sm:w-10/12">
-                        <img src="/logo-dark.svg" alt="" />
+                        <img src="./logo-dark.svg" alt="" />
                         <Link className="flex-initial flex flex-wrap ml-[18px] content-center font-bold text-2xl tracking-widest text-white min-w-[161px] mt-[1px]" to="#">Beautice</Link>
                     </div>
                     <div className="flex flex-col xl:w-[492px] sm:w-full pl-[31px] pt-[35px]">
@@ -23,19 +23,19 @@ function Footer() {
                         <p className="text-sm text-[#D7DBFF] leading-6 font-medium-italic pt-[22.5px] pl-[1px] tracking-widest">Baker Steet 101, NY, United States.</p>
                         <div className="flex flex-row pt-[1px]">
                             <p className="text-sm text-[#D7DBFF] leading-[24px] font-medium-italic tracking-widest">+521 569 8966.</p>
-                            <p className="text-sm text-[#D7DBFF] leading-[24px] font-medium-italic pl-[42px] tracking-widest underline">mail@ .com.</p>
+                            <p className="text-sm text-[#D7DBFF] leading-[24px] font-medium-italic pl-[42px] tracking-widest underline">mail@company.com.</p>
                         </div>
                     </div>
                     <div className="grid grid-cols-5 gap-[45px] md:mt-[154px] sm:mt-[50px] max-w-[305px] xl:pb-0 sm:pb-[50px]">
-                        <a href="#">
+                        <Link to="#">
                             <img src="facebook.svg" alt="Facebook" />
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link to="#">
                             <img src="twitter.svg" alt="Twitter" />
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link to="#">
                             <img src="linkedin.svg" alt="Linkedin" />
-                        </a>
+                        </Link>
                         <a href="#">
                             <img src="youtube.svg" alt="Youtube" />
                         </a>

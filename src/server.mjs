@@ -5,11 +5,11 @@ import cors from 'cors'
 import bcrypt from 'bcrypt'
 import fs from 'fs'
 
-const DB_PATH = "./database/db.json"
-const db = JSON.parse(fs.readFileSync(DB_PATH))
+const USERS_PATH = "./database/users.json"
+const BLOGS_PATH = "./database/blogs.json"
 
-console.log("current users:")
-console.log(db.users)
+const users_db = JSON.parse(fs.readFileSync(USERS_PATH))
+const blogs_db = JSON.parse(fs.readFileSync(BLOGS_PATH))
 
 const app = express()
 const port = 3000
@@ -25,27 +25,29 @@ app.use((req, res, next) => {
 
 app.post('/register', async (req, res) => {
     const { firstname, lastname, username, email, password } = req.body
-    const userExisted = db.users.find(user => user.username === username || user.email === email)
+    const userExisted = users_db.users.find(user => user.username === username || user.email === email)
 
     if (userExisted) {
         console.log('Username already existed.')
-        return res.status(400).json({
+        res.status(400).json({
             message: 'Username already existed.'
         })
+        return
     }
 
     if ((!username && !email) || !password) {
         console.log('Username and password are required.')
-        return res.status(400).json({
+        res.status(400).json({
             message: 'Username and password are required.'
         })
+        return
     }
 
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
 
-    db.users.push({ firstname, lastname, username, email, password: hashedPassword })
-    fs.writeFile(DB_PATH, JSON.stringify(db), (err) => {
+    users_db.users.push({ firstname, lastname, username, email, password: hashedPassword })
+    fs.writeFile(USERS_PATH, JSON.stringify(users_db), (err) => {
         if (err) {
             console.err(err)
             res.status(500).json({
@@ -54,30 +56,32 @@ app.post('/register', async (req, res) => {
         } else {
             console.log('New user created.')
             res.status(201).json({
-                message: 'User created.'
+                message: 'New user created.'
             })
         }
     })
-
 })
 
 app.post('/signin', async (req, res) => {
     const { username, password } = req.body
-    const user = db.users.find(user => user.username === username || user.email === username)
+    const user = users_db.users.find(user => user.username === username || user.email === username)
 
     if (!user) {
-        console.log("User not found.")
-        res.status(400).json({
-            message: 'User not found.'
+        console.log("Invalid Credentials.")
+        res.status(401).json({
+            message: 'Invalid Credentials.'
         })
+        return
     }
 
+    console.log(user)
     const isPasswordValid = await bcrypt.compare(password, user.password)
     if (!isPasswordValid) {
-        console.log("Invalid Password.")
-        res.status(400).json({
-            message: 'Invalid Password.'
+        console.log("Invalid Credentials.")
+        res.status(401).json({
+            message: 'Invalid Credentials.'
         })
+        return
     }
 
     const jwtToken = jwt.sign({ username: user.username }, JWT_SECRET, { expiresIn: 60 * 60 })
@@ -92,6 +96,7 @@ app.get('/protected', (req, res) => {
         res.status(401).json({
             message: 'Access Denied.'
         })
+        return
     }
 
     try {

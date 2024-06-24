@@ -7,6 +7,7 @@ import {
 import { useState, useEffect } from 'react'
 import { Layout as RegisterLayout, Panel, Input } from '../components/Authentication'
 import axios from 'axios'
+import { useAuth } from '@/hooks/auth'
 
 type RegisterData = {
     status: "success" | "fail"
@@ -27,7 +28,8 @@ const ErrorContent = {
     username_blank: "Username / Email cannot be blank",
     email_invalid: "Email is invalid",
     password_less_than_8: "Password cannot have less than 8 characters",
-    register_failed: "Error: Cannot register new account. Please try again later"
+    already_exists: "Username / Email already exists",
+    register_failed: "Error: User already existed."
 }
 
 const ErrorInfo = ({ errors }: { errors: Errors }) => {
@@ -42,8 +44,16 @@ const ErrorInfo = ({ errors }: { errors: Errors }) => {
     )
 }
 
-export default function RegisterPage() {
+export default function Register() {
+    const auth = useAuth()
+    const [isSignedIn, setIsSignedIn] = useState<boolean>(false)
     const newUser = useActionData() as RegisterData
+
+    useEffect(() => {
+        if (auth.user.isAuthenticated) {
+            setIsSignedIn(true)
+        }
+    }, [auth])
 
     const fetchData = (): Errors | null => {
         if (newUser) {
@@ -59,9 +69,15 @@ export default function RegisterPage() {
     }
 
     return (
-        <RegisterLayout>
-            <RegisterPanel errors={fetchData()} />
-        </RegisterLayout>
+        isSignedIn ?
+            <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center gap-y-[10px]">
+                <h1 className="text-5xl text-navy-blue font-semibold">You have already signed in.</h1>
+                <Link to="/" className='text-base text-pink font-medium'>Go back to front page.</Link>
+            </div>
+            :
+            <RegisterLayout >
+                <RegisterPanel errors={fetchData()} />
+            </RegisterLayout >
     )
 }
 
@@ -75,11 +91,11 @@ const RegisterPanel = ({ errors }: { errors: Errors | null }) => {
 
     useEffect(() => {
         if (errors) {
-            if (_errors != errors) {
+            if (_errors !== errors) {
                 setErrors(errors)
             }
         }
-    }, [])
+    }, [errors])
 
     useEffect(() => {
         if (_errors?.register_failed) {

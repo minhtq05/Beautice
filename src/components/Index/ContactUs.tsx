@@ -29,7 +29,7 @@ function ContactUs() {
                 </svg>
             </div> */}
             <div className="flex flex-wrap xl:flex-row sm:flex-col justify-center xl:items-start sm:items-center gap-x-[100px] xl:mt-[122.5px] pl-[20px] pr-[20px] sm:max-w-10/12 z-10">
-                <img className="md:mt-[180px] sm:mt-[50px] z-10" src="/contact-us.svg" alt="" />
+                <img className="md:mt-[180px] sm:mt-[50px] z-10" src="./Index/contact-us.svg" alt="" />
                 <div className="flex flex-col justify-start z-10">
                     <p className="text-base text-pink font-semibold mt-[20px] ml-[1px]">Contact Us</p>
                     <h2 className="text-4xl text-navy-blue font-semibold max-w-[420px] mt-[9px] leading-[125%]">Send your inquiry to our expert team</h2>
